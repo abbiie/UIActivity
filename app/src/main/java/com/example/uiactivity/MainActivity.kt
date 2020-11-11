@@ -19,8 +19,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         private fun Exit(){
-            finishAffinity(); // Close all activites
-            System.exit(0);
-//                finish();
+            finishAffinity()
+            System.exit(0)
             }
         }
