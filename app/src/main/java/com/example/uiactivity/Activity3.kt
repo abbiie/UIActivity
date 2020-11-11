@@ -45,17 +45,17 @@ class Activity3 : AppCompatActivity() {
     private fun Nextt() {
         val Nextt = Intent(this, DisplayAct::class.java)
         val bday = findViewById<TextView>(R.id.bdate).text.toString()
-        val name =  intent.getStringExtra("fname")
-        val surname = intent.getStringExtra("lname")
-        val mail = intent.getStringExtra("email")
-        val age = intent.getStringExtra("age")
-        val contact = intent.getStringExtra("phone")
-        val Info = "First Name: \t $name " +
-                "\nLast Name: \t $surname " +
-                "\nEmail: \t $mail " +
+        val age =  findViewById<TextView>(R.id.ageNum).text.toString()
+        val fname =  intent.getStringExtra("first name")
+        val lname = intent.getStringExtra("last name")
+        val email = intent.getStringExtra("email")
+        val phone = intent.getStringExtra("Phone Number")
+        val Info = "First Name: \t $fname " +
+                "\nLast Name: \t $lname " +
+                "\nEmail: \t $email " +
                 "\nAge: \t $age " +
                 "\nBirthday \t $bday" +
-                "\nPhone Number: \t $contact"
+                "\nPhone Number: \t $phone"
         Nextt.putExtra("output", Info)
         startActivity(Nextt)
     }
