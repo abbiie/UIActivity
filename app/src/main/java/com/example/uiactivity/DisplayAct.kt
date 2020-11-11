@@ -12,6 +12,7 @@ class DisplayAct : AppCompatActivity() {
         setContentView(R.layout.activity_display)
 
         findViewById<Button>(R.id.MBtn).setOnClickListener{MainMenu()}
+
         val txt = findViewById<TextView>(R.id.Information)
         val output = intent.getStringExtra("output")
         txt.text = output

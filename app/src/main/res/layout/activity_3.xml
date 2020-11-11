@@ -40,6 +40,7 @@
         android:layout_height="27dp"
         android:layout_marginBottom="168dp"
         android:max="60"
+        android:min="18"
         android:scrollbarSize="5dp"
         android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"

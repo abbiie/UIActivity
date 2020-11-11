@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CalendarView
+import android.widget.SeekBar
 import android.widget.TextView
 
 class Activity3 : AppCompatActivity() {
+    lateinit var slider: SeekBar
+    lateinit var value: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_3)
         findViewById<Button>(R.id.nexttBtn).setOnClickListener { Nextt() }
         findViewById<Button>(R.id.backkBtn).setOnClickListener { Backk() }
+
 
         val calendar = findViewById<CalendarView>(R.id.calendarView)
         val calendarvalue = findViewById<TextView>(R.id.bdate)
@@ -23,6 +28,18 @@ class Activity3 : AppCompatActivity() {
             val addmonthplus1 = convertmonthtoint + 1;
             calendarvalue.text = ("$i3/$addmonthplus1/$i").toString()
         }
+        slider = findViewById(R.id.seekBar) as SeekBar
+        value = findViewById(R.id.ageNum) as TextView
+        slider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                value.text = progress.toString()
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+        })
+
     }
 
     private fun Nextt() {
